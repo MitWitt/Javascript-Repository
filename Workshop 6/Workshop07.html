@@ -81,7 +81,7 @@
 		<h2>Exercise 3: Parsing the XML</h2>
 		<p>Continue working from exercise 2. Once you have injected the results, use JavaScript to parse the XML/JSON-file and output the file contents in a nice HTML-table below. Add some styles to the table.</p>
 		<p>
-			<input type="button" name="Fetch3" id="Fetch3" value="Button" onclick="loadAndParseXML()">
+			<input type="button" name="Fetch3" id="Fetch3" value="Load and Parse Quotes" onclick="loadAndParseXML()">
 		</p>
 		<div id="tabledata">
 			<table>
@@ -112,8 +112,9 @@
 			<li>News heading 2</li>
 			<li><a href="#">News heading 3</a></li>
 		</ul>
-		<input type="button" name="Fetch3" id="Fetch3b" value="Load YAHOO newsfeed" onclick="loadAndParseNews('https://www.yahoo.com/news/rss/')">
-		<input type="button" name="Fetch3" id="Fetch3c" value="Load Iltalehti Newsfeed" onclick="loadAndParseNews('http://www.iltalehti.fi/rss/uutiset.xml')">
+		<ul id="news-list"></ul> 
+		<input type="button" name="FetchNews" id="FetchNews" value="Load Yahoo News" onclick="loadAndParseNews('https://meijastiina.github.io/news_rss_topstories.xml')"> 
+    	<input type="button" name="Fetch3" id="Fetch3c" value="Load Iltalehti Newsfeed" onclick="loadAndParseNews('https://cors-anywhere.herokuapp.com/http://www.iltalehti.fi/rss/uutiset.xml')">
 		<div id="newsfeed">
 		</div>
 
