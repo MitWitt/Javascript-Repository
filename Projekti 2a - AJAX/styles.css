@@ -1,0 +1,166 @@
+/* Sivun taustaväri ja fontin valinta */
+html {
+    background-color: #070707;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    background-color: #222;
+    display: flex; /* Asettaa headerin flex-kontiksi */
+    align-items: stretch; /* Varmistaa, että elementit venyvät ylös ja alas */
+    width: 100%; /* Kattaa koko leveys */
+    box-sizing: border-box; /* Ota padding huomioon leveydessä */
+}
+
+.nav {
+    display: flex; /* Asettaa napit vierekkäin */
+    margin-left: 20px; /* Välit logo ja napit */
+}
+
+.nav-item {
+    color: white; /* Tekstin väri */
+    text-decoration: none; /* Poistaa oletusalustekstin alaviivat */
+    padding: 15px 20px; /* Lisää ylös ja alas sekä vasemmalle ja oikealle tilaa */
+    transition: background-color 0.3s ease; /* Pehmeä siirtymä taustavärin muutoksessa */
+    display: block; /* Tekee linkistä lohkotason elementin */
+    flex-grow: 1; /* Tekee linkistä niin leveän kuin mahdollista */
+    font-size: 14px;
+}
+
+.nav-item:hover {
+    background-color: #070707; /* Taustaväri hover-tilassa */
+}
+
+.logo {
+    height: 50px; /* Voit säätää korkeutta tarpeen mukaan */
+}
+
+/* Otsikkolaatikko */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #070707;
+    color: #FFC800;
+    width: 1000px; /* Sama leveys kuin elokuvakorteilla */
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.title-container h1 {
+    margin-bottom: 10px;
+}
+
+/* Tyylit valintalistalle */
+.title-container select {
+    padding: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Elokuvakorttien kontti */
+#moviesContainer {
+    display: flex;
+    flex-wrap: wrap; /* Sallii korttien kääntyä seuraavalle riville */
+    justify-content: space-around; /* Jaa kortit tasaisesti */
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    
+}
+
+.movie {
+    display: flex; /* Asetetaan flexiksi */
+    flex-direction: column; /* Asetetaan elementit pystysuoraan */
+    justify-content: space-between; /* Jakaa tilan elementtien välillä */
+    padding: 12px;
+    text-align: center;
+    background-color: #222;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Pehmeä siirtymä */
+    width: calc(25% - 20px); /* 4 korttia riville */
+    box-sizing: border-box; /* Ota padding huomioon leveydessä */
+    margin: 10px; /* Marginaali korttien välillä */
+    flex: 0 1 calc(20% - 20px); /* Jokainen elokuvakortti vie 20% tilasta, huomioi gap */
+    min-width: 180px; /* Aseta minimileveys, jotta kortit eivät kavennu liikaa */
+}
+
+.button-container {
+    margin-top: auto; /* Työntää napin alareunaan */
+    text-align: center; /* Keskittää napin */
+}
+
+.showtime-button {
+    background-color: #FFC800; /* Taustaväri */
+    color: #070707; /* Tekstin väri */
+    border: none; /* Poistaa oletusreunan */
+    border-radius: 5px; /* Pyöristetyt kulmat */
+    padding: 10px 19px; /* Sisätilaa ylhäältä ja alhaalta, sekä vasemmalle ja oikealle */
+    font-size: 16px; /* Fonttikoko */
+    cursor: pointer; /* Käyttäjä voi klikata */
+    transition: background-color 0.3s ease; /* Pehmeä siirtymä taustavärin muutoksessa */
+}
+
+.movie h3 {
+    max-width: 100%;
+    word-wrap: break-word; /* Pakottaa sanan katkeamaan rivin loppuessa */
+    margin: 10px 0;
+    font-size: 18px;
+    text-transform: uppercase; /* Muuttaa kaikki kirjaimet isoiksi */
+}
+
+.movie:hover {
+    transform: translateY(-8px) scale(1.05); /* Nostaa ja suurentaa hieman */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Lisää varjostusta */
+}
+
+.movie img {
+    width: 100%; /* Täyttää kortin leveyden */
+    height: auto; /* Korkeus skaalautuu automaattisesti */
+    max-height: 200px; /* Aseta maksimikorkeus, voit säätää tätä arvoa tarpeen mukaan */
+    object-fit: contain; /* Kuvan säilyttäminen ilman leikkautumista */
+    margin-bottom: 10px; /* Väli kuvan ja tekstien välillä */
+}
+
+.movie p {
+    font-size: 14px;
+    margin: 5px 0;
+    padding-bottom: 5px;
+}
+
+/* Media kyselyt responsiivisuutta varten */
+@media (max-width: 1200px) {
+    .movie {
+        width: calc(33.33% - 20px); /* 3 korttia riville */
+    }
+}
+@media (max-width: 900px) {
+    .movie {
+        width: calc(50% - 20px); /* 2 korttia riville */
+    }
+}
+@media (max-width: 600px) {
+    .movie {
+        width: 100%; /* 1 kortti riville */
+    }
+    .title-container h1 {
+        font-size: 20px; /* Pienempi fonttikoko pienissä näytöissä */
+    }
+}
+@media (max-width: 400px) {
+    .title-container h1 {
+        font-size: 18px; /* Vielä pienempi fonttikoko erittäin pienissä näytöissä */
+    }
+}
