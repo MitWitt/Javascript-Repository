@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // loadTheaters funktio hakee teatterit ja lisää ne valintalistalle
 async function loadTheaters() {
-    const response = await fetch('http://www.finnkino.fi/xml/TheatreAreas/');
+    const response = await fetch('https://www.finnkino.fi/xml/TheatreAreas/');
     const text = await response.text();
     const parser = new DOMParser();
     const xml = parser.parseFromString(text, 'application/xml');
@@ -28,7 +28,7 @@ async function loadTheaters() {
 
 // loadMovies funktio hakee elokuvat valitusta teatterista
 async function loadMovies(theaterId) {
-    const response = await fetch(`http://www.finnkino.fi/xml/Schedule/?area=${theaterId}`);
+    const response = await fetch(`https://www.finnkino.fi/xml/Schedule/?area=${theaterId}`);
     const text = await response.text();
     const parser = new DOMParser();
     const xml = parser.parseFromString(text, 'application/xml');
