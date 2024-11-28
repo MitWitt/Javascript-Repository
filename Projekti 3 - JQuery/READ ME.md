@@ -3,7 +3,7 @@ To Do-lista
 
 ## Demo link:
 `![Netlify linkki](https://project3-jquery.netlify.app/)`
-`![GitHub linkki](https://github.com/MitWitt/Projekti-3---jQuery.git)`
+`![GitHub linkki](https://github.com/MitWitt/Javascript-Repository/tree/main/Projekti%203%20-%20JQuery)`
 
 ## How was the workload divided
 Tein sovelluksen itse.
